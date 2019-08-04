@@ -54,7 +54,7 @@ export default {
 
 .nav{
     width: 100%;
-    height: 1rem;
+    height: 1.5rem;
     position: fixed;
     left:0;
     bottom: 0;
@@ -66,17 +66,17 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         li{
-            padding-top: .05rem;
+            padding-top: .15rem;
             width: 100%;
             list-style:none;
             display: flex;
             flex-direction: column;
             text-align: center;
             i{
-                font-size: .33rem;
+                font-size: .6rem;
             }
             span{
-                font-size: .25rem;
+                font-size: .4rem;
             }
         }   
     }   
