@@ -5,6 +5,7 @@ import Discount from "./discount"
 import Find from "./find"
 import Equip from "./equip"
 import More from "./more"
+import Search from "./search"
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,7 @@ export default new VueRouter({
         Discount,
         Find,
         Equip,
-        More
+        More,
+        Search
     ]
 })

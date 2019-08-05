@@ -2,10 +2,10 @@ const path = require("path")
 module.exports = {
     devServer: {
         proxy: {
-            '/api': {
-                target: 'http://www.shihuo.cn',
-                changeOrigin: true,
-            }
+            "/youhui":{
+                target:"http://m.shihuo.cn",
+                changeOrigin:true
+            },
         }
     },
     configureWebpack: {
