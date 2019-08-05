@@ -1,7 +1,7 @@
 <template>
-    <dir>
+    <div>
         More
-    </dir>
+    </div>
 </template>
 
 <script>

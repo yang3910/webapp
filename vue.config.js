@@ -5,7 +5,12 @@ module.exports = {
             '/homefis': {
                 target: 'http://m.shihuo.cn',
                 changeOrigin: true,
+            },
+            '/sports': {
+                target: 'http://m.shihuo.cn',
+                changeOrigin: true,
             }
+          
         }
     },
     configureWebpack: {

@@ -1,6 +1,7 @@
 <template>
   <div class="nav">
     <ul>
+        
         <router-link 
             v-for="(item,index) in navs" :key="index" 
             :to="item.path" tag="li"
@@ -54,11 +55,14 @@ export default {
 
 .nav{
     width: 100%;
-    height: 1rem;
+    height: 1.5rem;
     position: fixed;
     left:0;
+    display: flex;
     bottom: 0;
-    border-top: 1px solid #ccc;
+    background: #fff;
+    border-top: 1px solid #ccc;  
+    z-index: 999;
     ul{
         width: 100%;
         height: 100%;
@@ -66,17 +70,17 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         li{
-            padding-top: .05rem;
+            padding-top: .15rem;
             width: 100%;
             list-style:none;
             display: flex;
             flex-direction: column;
             text-align: center;
             i{
-                font-size: .33rem;
+                font-size: .6rem;
             }
             span{
-                font-size: .25rem;
+                font-size: .4rem;
             }
         }   
     }   

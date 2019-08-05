@@ -5,7 +5,8 @@ import Discount from "./discount"
 import Find from "./find"
 import Equip from "./equip"
 import More from "./more"
-
+import Sports from "./sports";
+import Running from "./running"
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -18,6 +19,8 @@ export default new VueRouter({
         Discount,
         Find,
         Equip,
-        More
+        More,
+        Sports,
+        Running
     ]
 })

@@ -18,6 +18,7 @@ export default {
 <style lang="scss">
 *{margin: 0;padding: 0}
 html,body{height:100%;}
-html{font-size: 16vw;}
-body{font-size: 16px;}
+html{font-size: 10vw;}
+body{font-size: 16px; overflow: hidden;background: #f3f3f3;}
+
 </style>

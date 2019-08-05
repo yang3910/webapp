@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from 'store';
 import router from 'router';
+import "common/compoents/index.js"
 import { Row,Col,Button } from 'ant-design-vue';
 
 Vue.config.productionTip = false
