@@ -1,6 +1,6 @@
 <template>
   <div class="youhui-list">
-     <GoodsList :list="list"></GoodsList>
+     <GoodsList :goodslist="goodsList"></GoodsList>
   </div>
 </template>
 
@@ -12,11 +12,11 @@ export default {
   async created() {
     let data = await discount_clothes_api();
     console.log(data);
-    this.list = data.data;
+    this.goodsList = data.data;
   },
   data() {
     return {
-      list: []
+      goodsList: []
     };
   },
   components:{

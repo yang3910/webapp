@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <router-link v-for="(item,index) in list" :key="index" tag="li" :to="item.href">
+    <router-link v-for="(item,index) in goodslist" :key="index" tag="li" :to="item.href">
       <img :src="item.img" />
       <div class="detail-box">
         <p>{{item.title}}</p>
@@ -20,7 +20,7 @@
 export default {
   name: "goodsList",
   props: {
-    list: {
+    goodslist: {
       type: Array,
       required: true
     }

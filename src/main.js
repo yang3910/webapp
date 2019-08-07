@@ -3,6 +3,7 @@ import App from './App.vue'
 import store from 'store';
 import router from 'router';
 import {Input} from 'ant-design-vue';
+import "swiper/dist/css/swiper.css"
 
 
 Vue.config.productionTip = false

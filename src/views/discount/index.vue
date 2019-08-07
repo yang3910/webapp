@@ -5,9 +5,6 @@
       <div class="components-input-demo-presuffix">
         <a-input
           placeholder="Basic usage"
-          v-model="userName"
-          ref="userNameInput"
-          @click="handleSkip"
         >
           <a-icon />
           <a-icon />
@@ -155,7 +152,6 @@ export default {
   name: "Discount",
   data() {
     return {
-      userName: "",
       flag: "true",
       list: [
         { name: "精选", path: "/discount/choice" },
@@ -168,9 +164,6 @@ export default {
     };
   },
   methods: {
-    handleSkip() {
-      this.$router.push("/search");
-    },
     handlePage(type) {
       switch (type) {
         case 0:

@@ -2,4 +2,31 @@ export default{
     path:"/find",
     component:()=>import("views/find"),
     name:"Find",
+    children:[
+        {
+            path:"chaoLiu",
+            component:()=>import("components/find/chaoLiu"),
+            name:"chaoLiu",
+        },
+        {
+            path:"lanQiu",
+            component:()=>import("components/find/lanQiu"),
+            name:"lanQiu",
+        },
+        {
+            path:"shiPin",
+            component:()=>import("components/find/shiPin"),
+            name:"shiPin",
+        },
+        {
+            path:"tuiJian",
+            component:()=>import("components/find/tuiJian"),
+            name:"tuiJian",
+        },
+        {
+            path:"zuiXin",
+            component:()=>import("components/find/zuiXin"),
+            name:"zuiXin",
+        },
+    ]
 }

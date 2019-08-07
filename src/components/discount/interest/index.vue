@@ -1,30 +1,28 @@
 <template>
   <div class="youhui-list">
-     <GoodsList :list="list"></GoodsList>
+    <GoodsList :goodslist="goodsList"></GoodsList>
   </div>
 </template>
 
 <script>
-import { discount_digital_api } from "api/discount";
-import GoodsList from 'common/goodsList';
+import { discount_interest_api } from "api/discount";
+import GoodsList from "common/goodsList";
 export default {
   name: "Choice",
   async created() {
-    let data = await discount_digital_api();
+    let data = await discount_interest_api();
     console.log(data);
-    this.list=data.data;
-
+    this.goodsList = data.data;
   },
-  data(){
-      return {
-          list:[],
-      }
+  data() {
+    return {
+      goodsList: []
+    };
   },
-  components:{
-    GoodsList,
+  components: {
+    GoodsList
   }
-  
-}
+};
 </script>
 
 <style lang="scss" scoped>

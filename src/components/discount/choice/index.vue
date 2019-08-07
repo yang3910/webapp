@@ -1,26 +1,26 @@
-/youhui/list?r=4&page=1&page_size=30&publish_date=<template>
+<template>
   <div class="youhui-list">
-     <GoodsList :list="list"></GoodsList>
+      <GoodsList :goodslist="goodsList"></GoodsList>
   </div>
 </template>
 
 <script>
-import { discount_footwear_api } from "api/discount";
+import { discount_choice_api } from "api/discount";
 import GoodsList from 'common/goodsList';
 export default {
   name: "Choice",
   async created() {
-    let data = await discount_footwear_api();
-    console.log(data);
-    this.list=data.data;
+    let data = await discount_choice_api();
+    // console.log(data);
+    this.goodsList=data.data;
 
   },
   data(){
       return {
-          list:[],
+          goodsList:[],
       }
   },
-   components:{
+  components:{
     GoodsList,
   }
   

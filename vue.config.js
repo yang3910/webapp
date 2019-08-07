@@ -2,9 +2,12 @@ const path = require("path")
 module.exports = {
     devServer: {
         proxy: {
-            "/youhui":{
+            "/abc":{
                 target:"http://m.shihuo.cn",
-                changeOrigin:true
+                changeOrigin:true,
+                pathRewrite:{
+                    "^/abc":""
+                }
             },
         }
     },
