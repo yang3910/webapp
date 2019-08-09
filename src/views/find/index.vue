@@ -96,6 +96,7 @@ export default {
   padding: 0;
 }
 #find {
+  height: 100%;
   background: #f0f3f5;
   font-family: Helvetica, sans-serif;
 }
@@ -157,6 +158,7 @@ export default {
   }
 }
 #main {
+  height: 100%;
   background: #fff;
   ul {
     display: flex;

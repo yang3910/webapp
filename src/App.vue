@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-   <TabBar></TabBar>
+   <TabBar v-if="$route.meta.tabBar"></TabBar>
    <router-view></router-view> 
   </div>
 </template>
@@ -21,4 +21,7 @@ html,body{height:100%;}
 html{font-size: 10vw;}
 body{font-size: 16px;}
 li{list-style: none;}
+#app{
+  height: 100%;
+}
 </style>

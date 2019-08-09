@@ -1,4 +1,5 @@
 <template>
+<!-- <YBScroll ref="yscroll"> -->
   <div id="discount">
     <!-- <div></div> -->
     <div class="top-bar">
@@ -139,17 +140,22 @@
           @click="handlePage"
         >{{item.name}}</router-link>
       </ul>
-      <keep-alive>
+      <keep-alive exclude="detail">
         <router-view></router-view>
       </keep-alive>
       
     </div>
   </div>
+<!-- </YBScroll> -->
 </template>
 
 <script>
+import YBScroll from "lib/bscroll";
 export default {
   name: "Discount",
+  components:{
+    YBScroll
+  },
   data() {
     return {
       flag: "true",
@@ -163,6 +169,11 @@ export default {
       page: "精选"
     };
   },
+  // mountes(){
+  //   this.$refs.yscroll.handlepullingUp(async()=>{
+  //     this.$refs.child.created();
+  //   })
+  // },
   methods: {
     handlePage(type) {
       switch (type) {
@@ -322,6 +333,7 @@ page {
 }
 #main {
   background: #fff;
+  height: 100%;
   ul {
     display: flex;
     justify-content: space-between;

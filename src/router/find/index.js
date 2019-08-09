@@ -2,31 +2,50 @@ export default{
     path:"/find",
     component:()=>import("views/find"),
     name:"Find",
+    redirect:"/find/tuiJian",
+    meta:{
+        tabBar:true
+    },
     children:[
         {
             path:"chaoLiu",
             component:()=>import("components/find/chaoLiu"),
             name:"chaoLiu",
+            meta:{
+                tabBar:true
+            },
         },
         {
             path:"lanQiu",
             component:()=>import("components/find/lanQiu"),
             name:"lanQiu",
+            meta:{
+                tabBar:true
+            },
         },
         {
             path:"shiPin",
             component:()=>import("components/find/shiPin"),
             name:"shiPin",
+            meta:{
+                tabBar:true
+            },
         },
         {
             path:"tuiJian",
             component:()=>import("components/find/tuiJian"),
             name:"tuiJian",
+            meta:{
+                tabBar:true
+            },
         },
         {
             path:"zuiXin",
             component:()=>import("components/find/zuiXin"),
             name:"zuiXin",
+            meta:{
+                tabBar:true
+            },
         },
     ]
 }

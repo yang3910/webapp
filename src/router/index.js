@@ -6,6 +6,7 @@ import Find from "./find"
 import Equip from "./equip"
 import More from "./more"
 import Search from "./search"
+import Detail from './detail';
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,7 @@ export default new VueRouter({
         Find,
         Equip,
         More,
-        Search
+        Search,
+        Detail
     ]
 })

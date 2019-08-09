@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <router-link v-for="(item,index) in goodslist" :key="index" tag="li" :to="item.href">
+    <router-link v-for="(item,index) in goodslist" :key="index" tag="li" :to="{name:'Detail',params:{goodsid:item.goodsid}}">
       <img :src="item.img" />
       <div class="detail-box">
         <p>{{item.title}}</p>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import {mapState,mapMutations} from 'vuex';
 export default {
   name: "goodsList",
   props: {
@@ -25,6 +26,13 @@ export default {
       required: true
     }
   },
+  computed:{
+    ...mapState({
+      goodsid:state=>state.goodsid
+    })
+  },
+  
+
 };
 </script>
 
