@@ -7,17 +7,20 @@ export default () => {
 
     let vm = new LoadingComponent({
         el: document.createElement("div"),
+        data:{
+            flag:false
+        },
         methods: {
             handlemount() {
-                document.body.appendChild(vm.$mount().$el)
+               this.flag=true
             },
             handleDestory() {
-                document.body.removeChild(vm.$mount().$el)
+               this.flag=false
             }
         }
     })
 
-
+    document.body.appendChild(vm.$mount().$el)
     return vm;
 
 }

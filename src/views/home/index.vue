@@ -1,10 +1,14 @@
 <template>
   <div id="home">
-      <div class="sec">
+  <Sousuo v-if="ss" ></Sousuo>
+  <div class="sec"  v-if="flag" >
+        <div class="gg">
+          <Banner></Banner>
+        </div>
     <div class="swiper-container" ref="swiperContainer">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item,index) in banner" :key="index">
-          <img :src="item" />
+          <img :src="item"/>
         </div>
       </div>
       <div class="swiper-pagination"></div>
@@ -12,7 +16,11 @@
     <div class="search">
       <form>
         <span>111</span>
-        <input type="search" placeholder="搜索商品、品牌" />
+        <v-touch
+        tag="input"
+        @tap="handleSearch()"
+        placeholder="搜索商品、品牌" 
+        class="search_input"></v-touch>
         <i>&#xe71b;</i>
       </form>
     </div>
@@ -52,6 +60,7 @@
             <span>{{item.name}}</span>
             <i>{{item.info}}</i>
         </router-link>
+       
       </ul>
         </div>
     </div>
@@ -80,15 +89,22 @@
     </div>
   </div>
 </template>
-
 <script>
-
+import Sousuo from "views/sousuo"
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.css";
 export default {
   name: "Home",
+  components:{
+Sousuo
+  },
+  methods:{
+handleSearch(){
+    this.flag=false;
+    this.ss=true;
+}
+  },
 created() {
-   
     let arr = [
       "http://shihuo.hupucdn.com/appHome/201901/0909/246bc13aad8b60058a81d242512e983f.png?imageView2/2/w/750/h/380/interlace/1",
       "http://shihuo.hupucdn.com/appHome/201901/0810/e3e9e3e19c8ac46b699f554b3aca7538.jpg?imageView2/2/w/750/h/380/interlace/1",
@@ -98,12 +114,13 @@ created() {
       "http://shihuo.hupucdn.com/appHome/201901/0500/d63108ffbf581d59f8d3552e346b8258.jpg?imageView2/2/w/750/h/380/interlace/1"
     ];
     this.banner = arr;
-  
   },
   data() {
     return {
+      page:"",
+      flag:true,
+       ss:false,
       banner: [],
-    
       sorts: [
         {
           name: "篮球",
@@ -228,6 +245,14 @@ created() {
   flex-direction: column;
   height: 50rem;
 }
+.gg{
+  z-index: 10;
+  height: 1rem;
+  position: absolute;;
+  top: 0;
+  left: 0;
+    width: 100%;
+}
 .swiper-container {
   height: 6.075rem;
 }
@@ -244,16 +269,17 @@ created() {
 .search {
   position: absolute;
   z-index: 10;
-  top: 1rem;
+  top: 1.6rem;
   left: 0.3125rem;
 }
-.search input {
+.search .search_input {
   width: 7.5rem;
   height: 0.75rem;
   line-height: 0.625rem;
   border-radius: 0 0.2rem 0.2rem 0;
   border: none;
   float: left;
+  background: #fff
 }
 .search span {
   height: 0.75rem;
@@ -265,6 +291,7 @@ created() {
 }
 .sec{
   flex: 1; overflow: auto;
+  position: relative;
 }
  .sec .sort{
    flex-direction: row;
@@ -370,7 +397,8 @@ background: #fff;
   height: 40%
 }
 .hot-activity h3{
-  padding: .1rem
+  padding: .1rem;
+   margin: 0;
 }
 .hot-activity ul .activity{
 
@@ -444,9 +472,4 @@ align-items: center;
 .nav_bottom a .router-link-active{
   background: #FF4338
 }
-
-
-
- 
-
 </style>

@@ -3,6 +3,10 @@ export default{
     component:()=>import("views/home"),
     name:"Home",
     redirect:"/home/commend",
+    meta:{
+        tabBar:true,
+        auth:false
+     },
     children:[
         {
             path:"commend",

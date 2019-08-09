@@ -1,5 +1,6 @@
 <template>
     <div class="running">
+        <ly-BScroll>
             <div class="listviews">
        <ul v-for="(item,index) in runningList" :key="index">
           <div class="goods_item_pic">
@@ -18,6 +19,7 @@
         </div>
     </ul>
     </div>
+        </ly-BScroll>
     </div>
 </template>
 <script>
@@ -37,5 +39,9 @@ export default {
 }
 </script>
 <style>
+.running{
+ height: 100%;
+    overflow: auto;
+}
 
 </style>

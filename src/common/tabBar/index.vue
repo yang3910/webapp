@@ -1,7 +1,6 @@
 <template>
   <div class="nav">
     <ul>
-        
         <router-link 
             v-for="(item,index) in navs" :key="index" 
             :to="item.path" tag="li"
@@ -12,7 +11,6 @@
     </ul>
   </div>
 </template>
-
 <script>
 export default {
     name:"TabBar",

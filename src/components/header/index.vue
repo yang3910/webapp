@@ -2,11 +2,12 @@
     <div class="header">
         <slot></slot>
         <h2>{{title}}</h2>
-        <h4>...</h4>
+         <v-touch tag="h4" @tap="handleMore">...</v-touch>
     </div>
 </template>
 
 <script>
+import {mapMutations} from "vuex"
 export default {
     name:"Header",
     props:{
@@ -14,6 +15,11 @@ export default {
             type:String,
             default:"篮球专区"
         }
+    },
+    methods:{
+       ...mapMutations({
+           handleMore:"handleMore"
+       })
     }
 }
 </script>
@@ -23,14 +29,15 @@ export default {
         width: 100%;
         height: 1.5rem;
         line-height: 1.5rem;
-        color: #fff;
         display: flex;
         color:#333;
         justify-content: center;
         align-items: center;
         position: fixed;
         left: 0;
+        background: #f3f3f3;
         top:0;
+        z-index: 99;
         border-bottom: 1px solid #999
     }
     .header h2{

@@ -1,5 +1,9 @@
 export default{
     path:"/running",
     component:()=>import("views/running"),
-    name:"Running"
+    name:"Running",
+    meta:{
+        tabBar:false,
+        auth:false
+     }
 }

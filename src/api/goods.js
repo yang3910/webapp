@@ -5,5 +5,13 @@ export const goods_api_running = ()=>http("get","/homefis/getNews?pageSize=20&pa
 export const goods_api_fitness = ()=>http("get","/homefis/getNews?pageSize=20&param_str=&type=fitness&channel_type=")
 export const goods_api_trend = ()=>http("get","/homefis/getNews?pageSize=20&param_str=&type=freestyle&channel_type=")
 export const sports_api_basketball = ()=>http("get","/sports/getNews?pageSize=20&param_str=1564945214_1564993449_2&type=basketball&newsId=&channel_type=")
-
-//http://m.shihuo.cn/sports/getNews?pageSize=20&param_str=&type=running&newsId=&channel_type=
+export const hotSearch= ()=>http("get","/search/hotSearch")
+export const goods_api_two= ()=>http("get","/homefis/getNews?pageSize=20&param_str=1565252204%3A3%3A&type=&channel_type=")
+export const goods_search= (keywords)=>http("get","/search/relatedKeywords",{keywords:keywords})
+export const goods_details= (id,tag_id=0,page=1,page_size=5,sort='hot')=>http("get","/sports/getComment",{id:id,tag_id:tag_id,page:page,page_size:page_size,sort:sort})
+export const goods_search_detail= (keywords,page=1,page_size=3)=>http("get","/search/allweb",{keywords:keywords,page:page,page_size:page_size})
+export const goods_search_detail1= (keywords)=>http("get","/search/searchAd",{keywords:keywords})
+export const goods_search_detail2= (keywords,page=1,page_size=3,type='shaiwu')=>http("get","/search",{keywords:keywords,page:page,page_size:page_size,type:type})
+export const goods_search_detail3= (keywords,page=1,page_size=3,type='goods')=>http("get","/search",{keywords:keywords,page:page,page_size:page_size,type:type})
+export const goods_search_detail4= (keywords,page=1,page_size=3,type='pic')=>http("get","/search",{keywords:keywords,page:page,page_size:page_size,type:type})
+export const goods_search_detail5= (keywords,page=1,page_size=3,type='news')=>http("get","/search",{keywords:keywords,page:page,page_size:page_size,type:type})

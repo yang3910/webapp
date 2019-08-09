@@ -1,7 +1,12 @@
 <template>
-    <div class="commend">
+    <div class="commend" >
+      <ly-BScroll ref="lyscroll">
        <div class="listviews">
-       <ul v-for="(item,index) in homeList" :key="index">
+       <v-touch 
+          tag="ul" 
+          v-for="(item,index) in homeList" 
+         :key="index"
+         @tap="toggleDetail(item.data.item_id)">
           <div class="goods_item_pic">
           <img
             :src="item.data.img"
@@ -16,24 +21,42 @@
             <span>{{item.data.merchant}}<i>{{item.data.price}}</i></span>
           </p>
         </div>
-    </ul>
+       </v-touch>
     </div>
+      </ly-BScroll>
     </div>
 </template>
 <script>
-import { goods_api } from "../../api/goods";
+import { goods_api,goods_api_two } from "../../api/goods";
 export default {
     name:"Commend",
     async created(){
-  let data = await goods_api();
-      this.homeList = data.data
- 
+      let data = await goods_api();
+      this.homeList = data.data;
+      console.log(this.homeList)
+      sessionStorage.setItem("homeList",JSON.stringify(data.data))
     },
     data(){
         return{
-              homeList:[],
+              homeList:JSON.parse(sessionStorage.getItem("homeList")) ||[],
         }
+    },
+    mounted(){
+        this.$refs.lyscroll.handlepullingUp(async ()=>{
+        let data= await goods_api_two();
+        this.homeList=[...this.homeList,...data.data];
+        sessionStorage.setItem("homeList",JSON.stringify(data.data));
+        this.$refs.lyscroll.handlefinishPullUp();
+      })
+    },
+    methods:{
+        toggleDetail(id){
+        console.log(id)
+        this.$router.push({name:"Details",params:{id}})
+      }
+    
     }
+
 }
 </script>
 <style>
@@ -46,7 +69,7 @@ export default {
     padding-left: .2rem;
     padding-right: .2rem;
     overflow-x:hidden;
-  background: #fff
+    background: #fff
 }
  .listviews  .goods_item_pic img{
    width: 100%;

@@ -9,8 +9,12 @@ module.exports = {
             '/sports': {
                 target: 'http://m.shihuo.cn',
                 changeOrigin: true,
-            }
-          
+            },
+            '/search': {
+                target: 'http://m.shihuo.cn',
+                changeOrigin: true,
+            },
+           
         }
     },
     configureWebpack: {
