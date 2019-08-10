@@ -11,28 +11,41 @@ export default{
         {
             path:"commend",
             name:"commend",
-            component:()=>import("components/commend")
+            component:()=>import("components/commend"),
+            meta:{
+                tabBar:true,
+            }
         },
 
         {
             path:"basketball",
             name:"basketball",
-            component:()=>import("components/basketball")
+            component:()=>import("components/basketball"),meta:{
+                tabBar:true,
+            }
         },
         {
             path:"fitness",
             name:"fitness",
-            component:()=>import("components/fitness")
+            component:()=>import("components/fitness"),meta:{
+                tabBar:true,
+            }
         },
         {
             path:"running",
             name:"running",
-            component:()=>import("components/running")
+            component:()=>import("components/running"),
+            meta:{
+                tabBar:true,
+            }
         },
         {
             path:"trend",
             name:"trend",
-            component:()=>import("components/trend")
+            component:()=>import("components/trend"),
+            meta:{
+                tabBar:true,
+            }
         },
       
     ]

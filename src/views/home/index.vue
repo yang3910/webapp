@@ -244,6 +244,7 @@ created() {
   display: flex;
   flex-direction: column;
   height: 50rem;
+  i{font-style: normal;}
 }
 .gg{
   z-index: 10;

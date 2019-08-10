@@ -5,17 +5,22 @@ import router from 'router';
 import observer from "./observer";
 import "common/compoents/index.js"
 import VueTouch from "vue-touch";
-import { Row,Col,Button } from 'ant-design-vue';
+import { Row,Col,Button,Input } from 'ant-design-vue';
+import "swiper/dist/css/swiper.css"
+import "./mock/index";
 Vue.prototype.$observer = observer;
 Vue.config.productionTip = false
 Vue.component(Row.name, Row)
 Vue.component(Col.name, Col)
 Vue.component(Button.name, Button)
 Vue.use(VueTouch, {name: 'v-touch'})
-// Vue.use(Grid)
 
+
+Vue.config.productionTip = false
+Vue.use(Input);
 new Vue({
   store,
   router,
+
   render: h => h(App)
 }).$mount('#app')

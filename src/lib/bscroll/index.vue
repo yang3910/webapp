@@ -1,7 +1,6 @@
-
 <template>
     <div class="wrapper" ref="wrapper">
-<slot></slot>
+        <slot></slot>
     </div>
 </template>
 
@@ -12,21 +11,12 @@ name:"ly-BScroll",
 mounted(){
    this.scroll= new BScroll(this.$refs.wrapper,{
         tap:true,
+        click:true,
         // pullDownRefresh:true,
         pullUpLoad:true,
     });
 },
   methods:{
-      //下拉刷新
-        // handlepullingDown(callback){
-        //     this.scroll.on("pullingDown",()=>{
-        //         callback();
-        //     })
-        // },
-        // handlefinishPullDown(){
-        //     this.scroll.finishPullDown();
-        //     this.scroll.refresh();
-        // },
         handlepullingUp(callback){
            
             this.scroll.on("pullingUp",()=>{
@@ -43,8 +33,9 @@ mounted(){
 }
 </script>
 
-<style>
-.wrapper{
-    height: 100%;
-}
+<style lang="scss" scoped>
+    .wrapper{
+        height:100%;
+    }
 </style>
+

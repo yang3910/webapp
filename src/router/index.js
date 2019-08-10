@@ -11,6 +11,8 @@ import Shop from "./shop"
 import Search from "./search"
 import Details from "./details"
 import Ranking from "./ranking"
+import Detail from './detail';
+
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -29,6 +31,8 @@ export default new VueRouter({
         Shop,
         Search,
         Details,
-        Ranking
+        Ranking,
+
+        Detail
     ]
 })

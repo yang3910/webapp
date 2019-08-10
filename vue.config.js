@@ -2,19 +2,13 @@ const path = require("path")
 module.exports = {
     devServer: {
         proxy: {
-            '/homefis': {
-                target: 'http://m.shihuo.cn',
-                changeOrigin: true,
+            "/abc":{
+                target:"http://m.shihuo.cn",
+                changeOrigin:true,
+                pathRewrite:{
+                    "^/abc":""
+                }
             },
-            '/sports': {
-                target: 'http://m.shihuo.cn',
-                changeOrigin: true,
-            },
-            '/search': {
-                target: 'http://m.shihuo.cn',
-                changeOrigin: true,
-            },
-           
         }
     },
     configureWebpack: {
